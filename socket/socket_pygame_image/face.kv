@@ -1,0 +1,55 @@
+
+QrtestHome:
+<QrtestHome>:
+    qrcam: qrcam
+    recog_name: recog_name
+    BoxLayout:
+
+        orientation: "vertical"
+        canvas.before:
+            Color:
+                rgba: 0.584, 0.604, 0.608, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            height: 20
+            size_hint_y: None
+            text: 'Video player'
+        
+        Label:
+            canvas.before:
+                Color:
+                    rgba:  [47 / 255., 167 / 255., 212 / 255., 1.]
+                Rectangle:
+                    size: (self.width, self.height)
+                    pos: (self.x, self.y)
+            size_hint_y: None
+            height: 1
+        BoxLayout:
+            orientation:"horizontal"
+
+            KivyCamera:
+                id: qrcam
+            Label:
+                size_hint_x: None
+                width: dp(2)
+                canvas.before:
+                    Color:
+                        rgba: [47 / 255., 167 / 255., 212 / 255., 1.]
+                    Rectangle:
+                        size: (self.width, self.height)
+                        pos: (self.x, self.y)
+            Label:
+                canvas.before:
+                    Color:
+                        rgba: 0.208, 0.196, 0.196, 1
+                    Rectangle:
+                        size: (self.width, self.height)
+                        pos: (self.x, self.y)
+                size_hint_x: 0.25
+                
+                id: recog_name
+                text: 'Recognizing'
+
+            
